@@ -1,4 +1,3 @@
-
 #include <stdexcept>
 #include "CommunicationAPI.hpp"
 
@@ -17,8 +16,7 @@ CommunicationAPI::~CommunicationAPI()
 {
 }
 
-bool
-CommunicationAPI::hasUser(std::string const &userName) const
+bool CommunicationAPI::hasUser(std::string const &userName) const
 {
     for (size_t i = 0; i < _usersOffset; ++i) {
         if (_users[i] == userName)
@@ -27,16 +25,14 @@ CommunicationAPI::hasUser(std::string const &userName) const
     return false;
 }
 
-    void
-CommunicationAPI::startMission(std::string const &missionName)
+void CommunicationAPI::startMission(std::string const &missionName)
 {
     if (missionName.size() == 0)
         throw std::invalid_argument("`missionName` should be at least 1 char.");
     _missionName = missionName;
 }
 
-    void
-CommunicationAPI::addUser(std::string const &userName)
+void CommunicationAPI::addUser(std::string const &userName)
 {
     if (userName.size() == 0)
         throw std::invalid_argument("`userName` should be at least 1 char.");
@@ -46,8 +42,7 @@ CommunicationAPI::addUser(std::string const &userName)
     _usersOffset += 1;
 }
 
-void
-CommunicationAPI::sendMessage(std::string const &userName,
+void CommunicationAPI::sendMessage(std::string const &userName,
         std::string const &message) const
 {
     if (!hasUser(userName))
@@ -57,8 +52,7 @@ CommunicationAPI::sendMessage(std::string const &userName,
     _output << message;
 }
 
-void
-CommunicationAPI::receiveMessage(std::string const &userName,
+void CommunicationAPI::receiveMessage(std::string const &userName,
         std::string &message) const
 {
     if (!hasUser(userName))
