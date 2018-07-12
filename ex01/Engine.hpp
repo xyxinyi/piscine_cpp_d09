@@ -1,15 +1,8 @@
-/*
-** EPITECH PROJECT, 2018
-** CPP Pool Day 14
-** File description:
-** Engine class definition
-*/
-
 #ifndef ENGINE_HPP_
-	#define ENGINE_HPP_
+#define ENGINE_HPP_
 
-	#include <cstddef>
-	#include "BaseComponent.hpp"
+#include <cstddef>
+#include "BaseComponent.hpp"
 
 class Engine : public BaseComponent {
 public:
@@ -30,4 +23,4 @@ private:
 
 };
 
-#endif // ENGINE_HPP_
+#endif

@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** CPP Pool Day 14
-** File description:
-** Engine class implementation
-*/
-
 #include <cmath>
 #include <string>
 #include "Errors.hpp"

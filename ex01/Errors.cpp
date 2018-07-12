@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** CPP Pool Day 14
-** File description:
-** Errors class implementation
-*/
-
 #include "Errors.hpp"
 
 NasaError::NasaError(std::string const &message,

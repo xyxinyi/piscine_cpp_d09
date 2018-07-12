@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** CPP Pool Day 14
-** File description:
-** CommunicationDevice class implementation
-*/
-
 #include <cstring>
 #include <iostream>
 #include <stdexcept>

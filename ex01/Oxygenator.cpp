@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** CPP Pool Day 14
-** File description:
-** Oxygenator class implementation
-*/
-
 #include <iostream>
 #include "Errors.hpp"
 #include "Oxygenator.hpp"

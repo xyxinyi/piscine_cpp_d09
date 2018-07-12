@@ -1,15 +1,8 @@
-/*
-** EPITECH PROJECT, 2018
-** CPP Pool Day 14
-** File description:
-** Errors class definition
-*/
+#ifndef ERRORS_HPP_
+#define ERRORS_HPP_
 
-#if !defined (ERRORS_HPP_)
-	#define ERRORS_HPP_
-
-	#include <stdexcept>
-	#include <string>
+#include <stdexcept>
+#include <string>
 
 class NasaError : public std::exception {
 public:
@@ -47,4 +40,4 @@ public:
 		std::string const &component = "Unknown");
 };
 
-#endif /* !defined (ERRORS_HPP_) */
+#endif

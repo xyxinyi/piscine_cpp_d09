@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** CPP Pool Day 14
-** File description:
-** CommunicationAPI class implementation
-*/
-
 #include <stdexcept>
 #include "CommunicationAPI.hpp"
 

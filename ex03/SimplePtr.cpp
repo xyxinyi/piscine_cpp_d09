@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** CPP Pool Day 14
-** File description:
-** SimplePtr class implementation
-*/
-
 #include "SimplePtr.hpp"
 
 SimplePtr::SimplePtr(BaseComponent *rawPtr) :

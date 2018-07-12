@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** CPP Pool Day &4
-** File description:
-** RefPtr class implementation
-*/
-
 #include "RefPtr.hpp"
 
 RefPtr::RefPtr(BaseComponent *rawPtr) :
