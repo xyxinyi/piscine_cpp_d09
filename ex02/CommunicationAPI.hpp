@@ -1,3 +1,13 @@
+/*
+** CommunicationAPI.hpp for cpp_d14m in /home/gogo/rendu/tek2/cpp_d14a/ex02/CommunicationAPI.hpp
+**
+** Made by Gauthier CLER
+** Login   <gauthier.cler@epitech.eu>
+**
+** Started on  Tue Jan 17 20:08:47 2017 Gauthier CLER
+** Last update Tue Jan 17 20:08:47 2017 Gauthier CLER
+*/
+
 #ifndef COMMUNICATION_HPP_
 #define COMMUNICATION_HPP_
 
@@ -6,33 +16,50 @@
 #include <istream>
 #include <ostream>
 
+// This API provides a way to communicate between Houston and the rover.
 class CommunicationAPI
 {
-public:
-	CommunicationAPI(std::istream &input, std::ostream &output);
+    public:
 
-	~CommunicationAPI();
+        // Create a CommunicationAPI's instance from valid input and output
+        // stream or throw an exception otherwise.
+        CommunicationAPI(std::istream &input, std::ostream &output);
 
-	void startMission(std::string const &missionName);
+        ~CommunicationAPI();
 
-	void addUser(std::string const &userName);
+        // Start a mission from its name. A valid mission name is at least 1
+        // character, an exception will be thrown otherwise.
+        void startMission(std::string const &missionName);
 
-	void receiveMessage(std::string const &name, std::string &msg) const;
+        // Register the given user to this API. It will fail if the name is
+        // invalid or if there is already too many users.
+        void addUser(std::string const &userName);
 
-	void sendMessage(std::string const &userName,
-		std::string const &message) const;
+        // Receive a message. The given user should be valid and the mission
+        // started as well.
+        void receiveMessage(std::string const &name, std::string &msg) const;
 
-	bool hasUser(std::string const &name) const;
+        // Send a message. The given user should be valid and the mission
+        // started as well.
+        void sendMessage(std::string const &userName,
+                std::string const &message) const;
 
-private:
-	static const size_t MAX_USERS = 5;
+        // Check wheter the given user is registered.
+        bool hasUser(std::string const &name) const;
 
-	size_t _usersOffset;
-	std::istream &_input;
-	std::ostream &_output;
-	std::string _missionName;
-	std::string _users[MAX_USERS];
+    private:
+
+        // The implementation required a fixed number of users. If this value is
+        // overflown, an exception will be thrown.
+        static const size_t MAX_USERS = 5;
+
+    private:
+        size_t _usersOffset;
+        std::istream &_input;
+        std::ostream &_output;
+        std::string _missionName;
+        std::string _users[MAX_USERS];
 
 };
 
-#endif 
+#endif // COMMUNICATION_HPP_
