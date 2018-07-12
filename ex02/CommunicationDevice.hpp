@@ -1,8 +1,13 @@
+
 #ifndef COMMUNICATION_DEVICE_HPP_
 #define COMMUNICATION_DEVICE_HPP_
 
 #include "CommunicationAPI.hpp"
 
+// This device will be used for communication between Houston and Mars.
+// Each astrounaute who want to use the device should be regester in the
+// device. A valid user name should only contain lowercase alphanumeric
+// characters.
 class CommunicationDevice
 {
     public:
@@ -20,4 +25,4 @@ class CommunicationDevice
         CommunicationAPI _api;
 };
 
-#endif
+#endif // COMMUNICATION_DEVICE_HPP_

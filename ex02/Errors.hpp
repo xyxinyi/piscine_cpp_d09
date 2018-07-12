@@ -1,43 +1,61 @@
+/*
+** Errors.hpp for cpp_d14m in /home/gogo/rendu/tek2/cpp_d14a/Errors.hpp
+**
+** Made by Gauthier CLER
+** Login   <gauthier.cler@epitech.eu>
+**
+** Started on  Tue Jan 17 16:19:37 2017 Gauthier CLER
+** Last update Tue Jan 17 16:19:37 2017 Gauthier CLER
+*/
+
 #ifndef ERRORS_HPP_
 #define ERRORS_HPP_
 
-#include <stdexcept>
 #include <string>
 
-class NasaError : public std::exception {
+class NasaError : public std::exception
+{
 public:
-	NasaError(std::string const &message,
-		std::string const &component = "Unknown");
-
-	std::string const &getComponent() const;
-	const char *what() const noexcept;
-
+  NasaError(std::string const &message,
+	    std::string const &component = "Unknown");
+  std::string const &getComponent() const;
+  virtual ~NasaError() throw() {};
+  const char* what() const throw(){  return this->_message.c_str(); };
 private:
-	std::string _message;
-	std::string _component;
+  std::string _message;
+  std::string	_component;
 };
 
-class LifeCriticalError : public NasaError {
+class MissionCriticalError : public NasaError
+{
 public:
-	LifeCriticalError(std::string const &message,
-		std::string const &component = "Unknown");
+  MissionCriticalError(std::string const &message,
+		       std::string const &component = "Unknown");
+  virtual ~MissionCriticalError() throw() {};
+
 };
 
-class MissionCriticalError : public NasaError {
+class LifeCriticalError : public NasaError
+{
 public:
-	MissionCriticalError(std::string const &message,
-		std::string const &component = "Unknown");
+  LifeCriticalError(std::string const &message,
+		    std::string const &component = "Unknown");
+  virtual ~LifeCriticalError() throw() {};
 };
 
-class CommunicationError : public NasaError {
+class UserError : public NasaError
+{
 public:
-	CommunicationError(std::string const &message);
+  UserError(std::string const &message,
+	    std::string const &component = "Unknown");
+  virtual ~UserError() throw() {};
 };
 
-class UserError : public NasaError {
+class CommunicationError : public NasaError
+{
 public:
-	UserError(std::string const &message,
-		std::string const &component = "Unknown");
+  CommunicationError(std::string const &message);
+  virtual ~CommunicationError() throw() {};
 };
 
-#endif 
+#endif
