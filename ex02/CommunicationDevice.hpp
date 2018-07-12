@@ -1,12 +1,3 @@
-/*
-** CommunicationDevice.hpp for cpp_d14m in /home/gogo/rendu/tek2/cpp_d14a/ex02/CommunicationDevice.hpp
-**
-** Made by Gauthier CLER
-** Login   <gauthier.cler@epitech.eu>
-**
-** Started on  Tue Jan 17 20:08:55 2017 Gauthier CLER
-** Last update Tue Jan 17 20:08:55 2017 Gauthier CLER
-*/
 
 #ifndef COMMUNICATION_DEVICE_HPP_
 #define COMMUNICATION_DEVICE_HPP_
