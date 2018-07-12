@@ -20,4 +20,4 @@ class CommunicationDevice
         CommunicationAPI _api;
 };
 
-#endif 
+#endif

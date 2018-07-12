@@ -9,6 +9,7 @@
 class CommunicationAPI
 {
     public:
+
         CommunicationAPI(std::istream &input, std::ostream &output);
 
         ~CommunicationAPI();
@@ -25,6 +26,7 @@ class CommunicationAPI
         bool hasUser(std::string const &name) const;
 
     private:
+    
         static const size_t MAX_USERS = 5;
 
     private:
