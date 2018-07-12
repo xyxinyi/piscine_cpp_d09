@@ -1,20 +1,16 @@
-/*
-** Errors.cpp for cpp_d14m in /home/gogo/rendu/tek2/cpp_d14a/Errors.cpp
-**
-** Made by Gauthier CLER
-** Login   <gauthier.cler@epitech.eu>
-**
-** Started on  Tue Jan 17 16:19:06 2017 Gauthier CLER
-** Last update Tue Jan 17 16:19:06 2017 Gauthier CLER
-*/
-
 #include "Errors.hpp"
 
-NasaError::NasaError(std::string const &message, const std::string &component) : _message(message), _component(component){
+NasaError::NasaError(const std::string &message, const std::string &component) {
+  this->_message = message;
+  this->_component = component;
 }
 
 std::string const &NasaError::getComponent() const {
   return this->_component;
+}
+
+std::string const &NasaError::getMessage() const {
+  return this->_message;
 }
 
 MissionCriticalError::MissionCriticalError(std::string const &message,
@@ -34,7 +30,6 @@ UserError::UserError(std::string const &message, const std::string &component)
 
 }
 
-CommunicationError::CommunicationError(std::string const &message)
-  : NasaError(message, "CommunicationDevice") {
+CommunicationError::CommunicationError(std::string const &message) : NasaError(message, "CommunicationDevice") {
 
 }
